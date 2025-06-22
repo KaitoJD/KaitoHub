@@ -1,7 +1,14 @@
 import type { NextConfig } from "next";
 
+const repo = "KaitoPage";
+const isGithubActions = process.env.GITHUB_ACTIONS === "true";
+
 const nextConfig: NextConfig = {
-  /* config options here */
+  basePath: isGithubActions ? `/${repo}` : "",
+  assetPrefix: isGithubActions ? `/${repo}/` : "",
+  images: {
+    unoptimized: true,
+  },  
 };
 
 export default nextConfig;
