@@ -13,10 +13,9 @@ const Navigation = () => {
     { name: 'Music Player', href: 'https://music.kaitojd.dev', external: true },
     // Có thể add thêm tools sau
   ]
-
   return (
-    <nav className="bg-white dark:bg-slate-800 shadow-md transition-colors duration-300 relative z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="bg-white dark:bg-slate-800 shadow-md transition-colors duration-300 relative z-50 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full overflow-hidden">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link href="/" className="text-xl font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
@@ -31,13 +30,12 @@ const Navigation = () => {
             <Link href="/about" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
               Portfolio
             </Link>
-            
-            {/* Tools Dropdown */}
+              {/* Tools Dropdown */}
             <div className="relative group">
               <button className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">
                 Tools
               </button>
-              <div className="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-slate-700 shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all border dark:border-slate-600">
+              <div className="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-slate-700 shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all border dark:border-slate-600 z-[60]">
                 {tools.map((tool) => (
                   <a
                     key={tool.name}

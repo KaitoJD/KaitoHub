@@ -1,5 +1,6 @@
 import Navigation from '@/components/Navigation'
 import AnimatedBackground from '@/components/AnimatedBackground'
+import ScrollNavigation from '@/components/ScrollNavigation'
 import Link from 'next/link'
 
 export default function Home() {
@@ -19,12 +20,13 @@ export default function Home() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-slate-900 transition-colors duration-300 relative">
+    <div className="min-h-screen bg-gray-50 dark:bg-slate-900 transition-colors duration-300 relative overflow-x-hidden">
       <AnimatedBackground />
       <Navigation />
+      <ScrollNavigation />
       
       {/* Hero Section */}
-      <section className="py-20 px-4 relative z-10">
+      <section id="hero" className="py-20 px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
             Hi, I&#39;m <span className="text-blue-600 dark:text-blue-400 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">KaitoJD</span>
@@ -56,19 +58,21 @@ export default function Home() {
           <p className="text-center text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
             Discover the tools and applications I&#39;ve created to enhance productivity and creativity
           </p>
-          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
             {tools.map((tool) => (
               <a
                 key={tool.name}
                 href={tool.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-xl shadow-md hover:shadow-xl p-6 transition-all duration-300 transform hover:scale-105 border border-gray-200/50 dark:border-slate-700/50"
+                className="group bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-xl shadow-md hover:shadow-xl p-6 transition-all duration-300 transform hover:scale-[1.02] border border-gray-200/50 dark:border-slate-700/50 overflow-hidden"
               >
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">{tool.icon}</div>
+                <div className="w-16 h-16 flex items-center justify-center mb-4 overflow-hidden">
+                  <span className="text-4xl group-hover:scale-105 transition-transform duration-300 origin-center block">{tool.icon}</span>
+                </div>
                 <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{tool.name}</h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{tool.description}</p>
-                <div className="mt-4 flex items-center text-blue-600 dark:text-blue-400 group-hover:translate-x-2 transition-transform duration-300">
+                <div className="mt-4 flex items-center text-blue-600 dark:text-blue-400 group-hover:translate-x-1 transition-transform duration-300">
                   <span className="text-sm font-medium">Explore</span>
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -81,7 +85,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 border-t border-gray-200 dark:border-slate-700 relative z-10">
+      <footer id="contact" className="py-12 px-4 border-t border-gray-200 dark:border-slate-700 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Get In Touch</h3>
@@ -91,7 +95,7 @@ export default function Home() {
           </div>
           
           {/* Contact Links */}
-          <div className="flex flex-wrap justify-center items-center gap-6 mb-8">
+          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 mb-8 px-4">
             {/* Email */}
             <a
               href="mailto:contact.nguyensynguyen@gmail.com"
