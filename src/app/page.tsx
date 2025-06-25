@@ -62,11 +62,11 @@ export default function Home() {
   const categories = ['All', 'Professional', 'Tools', 'Content', 'Entertainment']
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-slate-950 transition-colors duration-300 relative overflow-x-hidden">
+    <div className="min-h-screen bg-gray-100 dark:bg-slate-950 transition-colors duration-300 relative">
       <AnimatedBackground />
       
       {/* Hero Section */}
-      <section id="hero" className="min-h-screen flex items-center justify-center px-4 relative z-10">
+      <section id="hero" className="min-h-screen flex items-center justify-center px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-gray-50 mb-6 leading-tight">
             Welcome to <span className="text-blue-600 dark:text-blue-300 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-300 dark:to-purple-300 bg-clip-text text-transparent">Kaito Hub</span>
@@ -74,16 +74,16 @@ export default function Home() {
           <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed">
             Your central destination for all my projects, tools, and digital creations. Explore everything I&#39;ve built with passion and creativity!
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-30 px-8 py-4">
             <Link
               href="https://portfolio.kaitojd.me"
-              className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 text-white px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg font-medium"
+              className="w-full sm:w-48 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 text-white px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg font-medium relative z-30 text-center"
             >
               View Portfolio
             </Link>
             <Link
               href="#projects"
-              className="w-full sm:w-auto border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-slate-900 px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg font-medium"
+              className="w-full sm:w-48 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-300 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-slate-900 px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg font-medium relative z-30 text-center"
             >
               Explore Projects
             </Link>
@@ -92,7 +92,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-16 px-4 relative z-10">
+      <section id="projects" className="py-20 px-8 relative z-20 mb-32">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-gray-900 dark:text-gray-50">My Projects</h2>
           <p className="text-center text-gray-600 dark:text-gray-200 mb-8 max-w-2xl mx-auto">
@@ -100,7 +100,7 @@ export default function Home() {
           </p>
           
           {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
+          <div className="flex flex-wrap justify-center gap-2 mb-12">
             {categories.map((category) => (
               <button
                 key={category}
@@ -111,14 +111,14 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full px-8 py-8" style={{ isolation: 'isolate' }}>
             {projects.map((project) => (
               <a
                 key={project.name}
                 href={project.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-xl p-6 transition-all duration-300 transform hover:scale-[1.02] border border-gray-300/60 dark:border-slate-600/60 overflow-hidden relative"
+                className="group bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-2xl p-6 transition-all duration-100 hover:scale-[1.03] border border-gray-300/60 dark:border-slate-600/60 relative z-10 hover:z-50 transform-gpu"
               >
                 {/* Status Badge */}
                 <div className="absolute top-4 right-4">
@@ -153,11 +153,11 @@ export default function Home() {
                   ))}
                 </div>
                 
-                <div className="flex items-center text-blue-600 dark:text-blue-300 group-hover:translate-x-1 transition-transform duration-300">
+                <div className="flex items-center text-blue-600 dark:text-blue-300 group-hover:translate-x-1 transition-transform duration-100">
                   <span className="text-sm font-medium">
                     {project.status === 'Live' ? 'Visit Site' : 'Preview'}
                   </span>
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 ml-2 transition-transform duration-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </div>
@@ -168,7 +168,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 px-4 relative z-10 bg-white/50 dark:bg-slate-900/50">
+      <section className="py-20 px-8 relative z-0 bg-white/50 dark:bg-slate-900/50 mt-32">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-gray-900 dark:text-gray-50">Project Statistics</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -193,29 +193,29 @@ export default function Home() {
       </section>
 
       {/* Tools Section - Keep for backward compatibility */}
-      <section id="tools" className="py-16 px-4 relative z-10">
+      <section id="tools" className="py-20 px-8 relative z-20 mt-32">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-gray-900 dark:text-gray-50">Featured Tools</h2>
           <p className="text-center text-gray-600 dark:text-gray-200 mb-12 max-w-2xl mx-auto">
             Quick access to my most popular productivity and utility applications
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto px-8 py-8" style={{ isolation: 'isolate' }}>
             {projects.filter(p => p.status === 'Live').map((project) => (
               <a
                 key={project.name}
                 href={project.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-xl p-6 transition-all duration-300 transform hover:scale-[1.02] border border-gray-300/60 dark:border-slate-600/60 overflow-hidden"
+                className="group bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-2xl p-6 transition-all duration-100 hover:scale-[1.03] border border-gray-300/60 dark:border-slate-600/60 relative z-10 hover:z-50 transform-gpu"
               >
                 <div className="w-16 h-16 flex items-center justify-center mb-4 overflow-hidden">
                   <span className="text-4xl group-hover:scale-105 transition-transform duration-300 origin-center block">{project.icon}</span>
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-50 group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors">{project.name}</h3>
                 <p className="text-gray-600 dark:text-gray-200 leading-relaxed">{project.description}</p>
-                <div className="mt-4 flex items-center text-blue-600 dark:text-blue-300 group-hover:translate-x-1 transition-transform duration-300">
+                <div className="mt-4 flex items-center text-blue-600 dark:text-blue-300 group-hover:translate-x-1 transition-transform duration-100">
                   <span className="text-sm font-medium">Launch App</span>
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 ml-2 transition-transform duration-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </div>
@@ -226,7 +226,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer id="contact" className="py-12 px-4 border-t border-gray-300 dark:border-slate-600 relative z-10">
+      <footer id="contact" className="py-12 px-8 border-t border-gray-300 dark:border-slate-600 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
             <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-4">Get In Touch</h3>
