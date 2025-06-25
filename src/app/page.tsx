@@ -1,5 +1,4 @@
 import AnimatedBackground from '@/components/AnimatedBackground'
-import DropdownNavigation from '@/components/DropdownNavigation'
 import Link from 'next/link'
 
 export default function Home() {
@@ -65,10 +64,9 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-slate-950 transition-colors duration-300 relative overflow-x-hidden">
       <AnimatedBackground />
-      <DropdownNavigation />
       
       {/* Hero Section */}
-      <section id="hero" className="py-20 px-4 relative z-10">
+      <section id="hero" className="min-h-screen flex items-center justify-center px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-gray-50 mb-6 leading-tight">
             Welcome to <span className="text-blue-600 dark:text-blue-300 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-300 dark:to-purple-300 bg-clip-text text-transparent">Kaito Hub</span>

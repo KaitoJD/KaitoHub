@@ -14,8 +14,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kaito Page",
-  description: "Welcome to Kaito's personal space on the web. Explore projects and tools!",
+  title: "Kaito Hub",
+  description: "Your central destination for all my projects, tools, and digital creations. Explore everything I've built with passion and creativity!",
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/icon.svg', type: 'image/svg+xml', sizes: '180x180' }
+    ],
+    apple: '/icon.svg',
+  },
 };
 
 export default function RootLayout({
