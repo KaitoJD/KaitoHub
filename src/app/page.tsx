@@ -9,7 +9,7 @@ export default function Home() {
       href: 'https://portfolio.kaitojd.me',
       icon: '💼',
       category: 'Professional',
-      status: 'Coming Soon',
+      status: 'In Progress',
       tech: ['Next.js', 'TypeScript', 'Tailwind CSS']
     },
     {
@@ -27,7 +27,7 @@ export default function Home() {
       href: 'https://pomodoro.kaitojd.me',
       icon: '🍅',
       category: 'Tools',
-      status: 'Live',
+      status: 'Coming Soon',
       tech: ['React', 'PWA', 'Local Storage']
     },
     {
@@ -36,7 +36,7 @@ export default function Home() {
       href: 'https://music.kaitojd.me',
       icon: '🎵',
       category: 'Entertainment',
-      status: 'Live',
+      status: 'Coming Soon',
       tech: ['JavaScript', 'Web Audio API', 'CSS3']
     },
     {
@@ -52,7 +52,7 @@ export default function Home() {
       name: 'Weather App',
       description: 'Beautiful weather forecast with location-based insights',
       href: 'https://weather.kaitojd.me',
-      icon: '�️',
+      icon: '☁️',
       category: 'Tools',
       status: 'Coming Soon',
       tech: ['React', 'OpenWeather API', 'Charts.js']
@@ -118,13 +118,15 @@ export default function Home() {
                 href={project.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-2xl p-6 transition-all duration-100 hover:scale-[1.03] border border-gray-300/60 dark:border-slate-600/60 relative z-10 hover:z-50 transform-gpu"
+                className="group bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-2xl p-6 transition-all duration-300 transform hover:scale-105 hover:shadow-lg border border-gray-300/60 dark:border-slate-600/60 relative z-10 hover:z-50 transform-gpu"
               >
                 {/* Status Badge */}
                 <div className="absolute top-4 right-4">
                   <span className={`px-2 py-1 text-xs font-medium rounded-full ${
                     project.status === 'Live' 
-                      ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' 
+                      ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300'
+                      : project.status === 'In Progress'
+                      ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300'
                       : 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300'
                   }`}>
                     {project.status}
@@ -177,15 +179,15 @@ export default function Home() {
               <div className="text-gray-600 dark:text-gray-200 text-sm">Total Projects</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-600 dark:text-green-300 mb-2">2</div>
-              <div className="text-gray-600 dark:text-gray-200 text-sm">Live Applications</div>
+              <div className="text-3xl font-bold text-blue-600 dark:text-blue-300 mb-2">1</div>
+              <div className="text-gray-600 dark:text-gray-200 text-sm">In Progress</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600 dark:text-purple-300 mb-2">4</div>
+              <div className="text-3xl font-bold text-orange-600 dark:text-orange-300 mb-2">5</div>
               <div className="text-gray-600 dark:text-gray-200 text-sm">Coming Soon</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-orange-600 dark:text-orange-300 mb-2">8+</div>
+              <div className="text-3xl font-bold text-purple-600 dark:text-purple-300 mb-2">8+</div>
               <div className="text-gray-600 dark:text-gray-200 text-sm">Technologies</div>
             </div>
           </div>
@@ -200,13 +202,13 @@ export default function Home() {
             Quick access to my most popular productivity and utility applications
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto px-8 py-8" style={{ isolation: 'isolate' }}>
-            {projects.filter(p => p.status === 'Live').map((project) => (
+            {projects.filter(p => p.category === 'Tools').slice(0, 2).map((project) => (
               <a
                 key={project.name}
                 href={project.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-2xl p-6 transition-all duration-100 hover:scale-[1.03] border border-gray-300/60 dark:border-slate-600/60 relative z-10 hover:z-50 transform-gpu"
+                className="group bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-2xl p-6 transition-all duration-300 transform hover:scale-105 hover:shadow-lg border border-gray-300/60 dark:border-slate-600/60 relative z-10 hover:z-50 transform-gpu"
               >
                 <div className="w-16 h-16 flex items-center justify-center mb-4 overflow-hidden">
                   <span className="text-4xl group-hover:scale-105 transition-transform duration-300 origin-center block">{project.icon}</span>
