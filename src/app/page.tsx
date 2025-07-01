@@ -4,9 +4,9 @@ import Link from 'next/link'
 export default function Home() {
   const projects = [
     {
-      name: 'Portfolio',
+      name: 'About Me',
       description: 'Explore my professional work, experience, and technical skills',
-      href: 'https://portfolio.kaitojd.me',
+      href: 'https://about.kaitojd.me',
       icon: '💼',
       category: 'Professional',
       status: 'In Progress',
@@ -81,7 +81,9 @@ export default function Home() {
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <a
-              href="#about"
+              href="https://about.kaitojd.me"
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 font-medium py-2 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 group"
             >
               About
@@ -116,10 +118,10 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center relative z-30 px-8 py-4">
             <Link
-              href="https://portfolio.kaitojd.me"
+              href="https://about.kaitojd.me"
               className="w-full sm:w-48 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 text-white px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg font-medium relative z-30 text-center"
             >
-              View Portfolio
+              About Me
             </Link>
             <Link
               href="#projects"
@@ -230,39 +232,6 @@ export default function Home() {
               <div className="text-3xl font-bold text-purple-600 dark:text-purple-300 mb-2">8+</div>
               <div className="text-gray-600 dark:text-gray-200 text-sm">Technologies</div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Tools Section - Keep for backward compatibility */}
-      <section id="tools" className="py-20 px-8 relative z-20 mt-32">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-gray-900 dark:text-gray-50">Featured Tools</h2>
-          <p className="text-center text-gray-600 dark:text-gray-200 mb-12 max-w-2xl mx-auto">
-            Quick access to my most popular productivity and utility applications
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto px-8 py-8" style={{ isolation: 'isolate' }}>
-            {projects.filter(p => p.category === 'Tools').slice(0, 2).map((project) => (
-              <a
-                key={project.name}
-                href={project.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-2xl p-6 transition-all duration-300 transform hover:scale-105 hover:shadow-lg border border-gray-300/60 dark:border-slate-600/60 relative z-10 hover:z-50 transform-gpu"
-              >
-                <div className="w-16 h-16 flex items-center justify-center mb-4 overflow-hidden">
-                  <span className="text-4xl group-hover:scale-105 transition-transform duration-300 origin-center block">{project.icon}</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-50 group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors">{project.name}</h3>
-                <p className="text-gray-600 dark:text-gray-200 leading-relaxed">{project.description}</p>
-                <div className="mt-4 flex items-center text-blue-600 dark:text-blue-300 group-hover:translate-x-1 transition-transform duration-100">
-                  <span className="text-sm font-medium">Launch App</span>
-                  <svg className="w-4 h-4 ml-2 transition-transform duration-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </div>
-              </a>
-            ))}
           </div>
         </div>
       </section>
