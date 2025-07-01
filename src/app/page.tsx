@@ -79,50 +79,8 @@ export default function Home() {
     <div className="min-h-screen bg-gray-100 dark:bg-slate-950 transition-colors duration-300 relative">
       <AnimatedBackground />
       
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b border-gray-200/50 dark:border-slate-700/50 shadow-lg transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center">
-            <h1 className="text-xl font-bold text-gray-900 dark:text-gray-50">
-              <span className="text-blue-600 dark:text-blue-400 text-2xl font-black">&gt;&gt;</span> 
-              <span className="ml-2 text-gray-900 dark:text-white">
-                Kaito Hub
-              </span>
-            </h1>
-          </div>
-          
-          {/* Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <a
-              href="https://about.kaitojd.me"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 font-medium py-2 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 group"
-            >
-              About
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a
-              href="#projects"
-              className="relative text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 font-medium py-2 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 group"
-            >
-              Projects
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          </nav>
-          
-          {/* Mobile Menu Button */}
-          <button className="md:hidden p-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
-      </header>
-      
       {/* Hero Section */}
-      <section id="about" className="min-h-screen flex items-center justify-center px-8 relative z-10 pt-20">
+      <section id="about" className="min-h-screen flex items-center justify-center px-8 relative z-10 pt-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-gray-50 mb-6 leading-tight">
             Welcome to <span className="text-blue-600 dark:text-blue-300 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-300 dark:to-purple-300 bg-clip-text text-transparent">Kaito Hub</span>
@@ -220,8 +178,8 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 px-4 sm:px-8 relative z-0 mt-32">
-        <div className="max-w-6xl mx-auto px-4">
+      <section className="py-20 px-4 sm:px-8 relative z-0 mt-32 mb-20">
+        <div className="max-w-6xl mx-auto px-4 pb-8">
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-gray-50 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-300 dark:to-purple-300 bg-clip-text text-transparent">
@@ -233,7 +191,7 @@ export default function Home() {
           </div>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 px-4">
             {/* Total Projects */}
             <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-6 border border-blue-200/50 dark:border-blue-700/30 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-500 hover:scale-105">
               <div className="absolute top-0 right-0 w-16 h-16 bg-blue-500/10 dark:bg-blue-400/10 rounded-full -mr-8 -mt-8"></div>
@@ -304,7 +262,7 @@ export default function Home() {
           </div>
 
           {/* Additional Stats Row */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 px-4 pb-8">
             {/* Technologies */}
             <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-6 border border-purple-200/50 dark:border-purple-700/30 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:scale-105">
               <div className="absolute top-0 right-0 w-16 h-16 bg-purple-500/10 dark:bg-purple-400/10 rounded-full -mr-8 -mt-8"></div>
