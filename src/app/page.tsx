@@ -220,29 +220,140 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 px-8 relative z-0 bg-white/50 dark:bg-slate-900/50 mt-32">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-gray-900 dark:text-gray-50">Project Statistics</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 dark:text-blue-300 mb-2">6</div>
-              <div className="text-gray-600 dark:text-gray-200 text-sm">Total Projects</div>
+      <section className="py-20 px-4 sm:px-8 relative z-0 mt-32">
+        <div className="max-w-6xl mx-auto px-4">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-gray-50 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-300 dark:to-purple-300 bg-clip-text text-transparent">
+              Project Statistics
+            </h2>
+            <p className="text-gray-600 dark:text-gray-200 max-w-2xl mx-auto text-lg">
+              A comprehensive overview of my development journey and project portfolio
+            </p>
+          </div>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12 px-4">
+            {/* Total Projects */}
+            <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-6 border border-blue-200/50 dark:border-blue-700/30 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-500 hover:scale-105">
+              <div className="absolute top-0 right-0 w-16 h-16 bg-blue-500/10 dark:bg-blue-400/10 rounded-full -mr-8 -mt-8"></div>
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-blue-500/20 dark:bg-blue-400/20 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                  </div>
+                  <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform duration-300">6</div>
+                </div>
+                <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-1">Total Projects</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">Active portfolio</p>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-green-600 dark:text-green-300 mb-2">1</div>
-              <div className="text-gray-600 dark:text-gray-200 text-sm">Done</div>
+
+            {/* Done Projects */}
+            <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 p-6 border border-green-200/50 dark:border-green-700/30 hover:shadow-xl hover:shadow-green-500/10 transition-all duration-500 hover:scale-105">
+              <div className="absolute top-0 right-0 w-16 h-16 bg-green-500/10 dark:bg-green-400/10 rounded-full -mr-8 -mt-8"></div>
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-green-500/20 dark:bg-green-400/20 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div className="text-3xl font-bold text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform duration-300">1</div>
+                </div>
+                <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-1">Completed</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">Live & running</p>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 dark:text-blue-300 mb-2">0</div>
-              <div className="text-gray-600 dark:text-gray-200 text-sm">In Progress</div>
+
+            {/* In Progress */}
+            <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-900/20 dark:to-indigo-800/20 p-6 border border-indigo-200/50 dark:border-indigo-700/30 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-500 hover:scale-105">
+              <div className="absolute top-0 right-0 w-16 h-16 bg-indigo-500/10 dark:bg-indigo-400/10 rounded-full -mr-8 -mt-8"></div>
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-indigo-500/20 dark:bg-indigo-400/20 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div className="text-3xl font-bold text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform duration-300">0</div>
+                </div>
+                <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-1">In Progress</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">Currently working</p>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-orange-600 dark:text-orange-300 mb-2">5</div>
-              <div className="text-gray-600 dark:text-gray-200 text-sm">Coming Soon</div>
+
+            {/* Coming Soon */}
+            <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 p-6 border border-orange-200/50 dark:border-orange-700/30 hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-500 hover:scale-105">
+              <div className="absolute top-0 right-0 w-16 h-16 bg-orange-500/10 dark:bg-orange-400/10 rounded-full -mr-8 -mt-8"></div>
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-orange-500/20 dark:bg-orange-400/20 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div className="text-3xl font-bold text-orange-600 dark:text-orange-400 group-hover:scale-110 transition-transform duration-300">5</div>
+                </div>
+                <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-1">Coming Soon</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">In the pipeline</p>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600 dark:text-purple-300 mb-2">8+</div>
-              <div className="text-gray-600 dark:text-gray-200 text-sm">Technologies</div>
+          </div>
+
+          {/* Additional Stats Row */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 px-4">
+            {/* Technologies */}
+            <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-6 border border-purple-200/50 dark:border-purple-700/30 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:scale-105">
+              <div className="absolute top-0 right-0 w-16 h-16 bg-purple-500/10 dark:bg-purple-400/10 rounded-full -mr-8 -mt-8"></div>
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-purple-500/20 dark:bg-purple-400/20 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                  </div>
+                  <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform duration-300">8+</div>
+                </div>
+                <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-1">Technologies</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">Tech stack variety</p>
+              </div>
+            </div>
+
+            {/* Experience Years */}
+            <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-teal-50 to-teal-100 dark:from-teal-900/20 dark:to-teal-800/20 p-6 border border-teal-200/50 dark:border-teal-700/30 hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-500 hover:scale-105">
+              <div className="absolute top-0 right-0 w-16 h-16 bg-teal-500/10 dark:bg-teal-400/10 rounded-full -mr-8 -mt-8"></div>
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-teal-500/20 dark:bg-teal-400/20 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-teal-600 dark:text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                  </div>
+                  <div className="text-3xl font-bold text-teal-600 dark:text-teal-400 group-hover:scale-110 transition-transform duration-300">1</div>
+                </div>
+                <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-1">Experience</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">Years developing</p>
+              </div>
+            </div>
+
+            {/* Code Commits */}
+            <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-900/20 dark:to-pink-800/20 p-6 border border-pink-200/50 dark:border-pink-700/30 hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-500 hover:scale-105">
+              <div className="absolute top-0 right-0 w-16 h-16 bg-pink-500/10 dark:bg-pink-400/10 rounded-full -mr-8 -mt-8"></div>
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-pink-500/20 dark:bg-pink-400/20 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-pink-600 dark:text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                  </div>
+                  <div className="text-3xl font-bold text-pink-600 dark:text-pink-400 group-hover:scale-110 transition-transform duration-300">500+</div>
+                </div>
+                <h3 className="font-semibold text-gray-900 dark:text-gray-50 mb-1">Commits</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">Lines of code</p>
+              </div>
             </div>
           </div>
         </div>
