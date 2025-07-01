@@ -2,6 +2,20 @@ import AnimatedBackground from '@/components/AnimatedBackground'
 import Link from 'next/link'
 
 export default function Home() {
+  // Function to get status badge styling based on status
+  const getStatusStyle = (status: string) => {
+    switch (status) {
+      case 'Done':
+        return 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300'
+      case 'In Progress':
+        return 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300'
+      case 'Coming Soon':
+        return 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300'
+      default:
+        return 'bg-gray-100 dark:bg-gray-900/30 text-gray-700 dark:text-gray-300'
+    }
+  }
+
   const projects = [
     {
       name: 'About Me',
@@ -9,7 +23,7 @@ export default function Home() {
       href: 'https://about.kaitojd.me',
       icon: '💼',
       category: 'Professional',
-      status: 'In Progress',
+      status: 'Done',
       tech: ['Next.js', 'TypeScript', 'Tailwind CSS']
     },
     {
@@ -164,13 +178,7 @@ export default function Home() {
               >
                 {/* Status Badge */}
                 <div className="absolute top-4 right-4">
-                  <span className={`px-2 py-1 text-xs font-medium rounded-full ${
-                    project.status === 'Live' 
-                      ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300'
-                      : project.status === 'In Progress'
-                      ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300'
-                      : 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300'
-                  }`}>
+                  <span className={`px-2 py-1 text-xs font-medium rounded-full ${getStatusStyle(project.status)}`}>
                     {project.status}
                   </span>
                 </div>
@@ -199,7 +207,7 @@ export default function Home() {
                 
                 <div className="flex items-center text-blue-600 dark:text-blue-300 group-hover:translate-x-1 transition-transform duration-100">
                   <span className="text-sm font-medium">
-                    {project.status === 'Live' ? 'Visit Site' : 'Preview'}
+                    {project.status === 'Done' ? 'Visit Site' : 'Preview'}
                   </span>
                   <svg className="w-4 h-4 ml-2 transition-transform duration-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -221,7 +229,11 @@ export default function Home() {
               <div className="text-gray-600 dark:text-gray-200 text-sm">Total Projects</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 dark:text-blue-300 mb-2">1</div>
+              <div className="text-3xl font-bold text-green-600 dark:text-green-300 mb-2">1</div>
+              <div className="text-gray-600 dark:text-gray-200 text-sm">Done</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-blue-600 dark:text-blue-300 mb-2">0</div>
               <div className="text-gray-600 dark:text-gray-200 text-sm">In Progress</div>
             </div>
             <div className="text-center">
