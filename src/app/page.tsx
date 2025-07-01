@@ -69,8 +69,8 @@ export default function Home() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b border-gray-200/50 dark:border-slate-700/50 shadow-lg transition-all duration-300">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center group">
-            <h1 className="text-xl font-bold text-gray-900 dark:text-gray-50 transition-all duration-300 group-hover:scale-105">
+          <div className="flex items-center">
+            <h1 className="text-xl font-bold text-gray-900 dark:text-gray-50">
               <span className="text-blue-600 dark:text-blue-400 text-2xl font-black">&gt;&gt;</span> 
               <span className="ml-2 text-gray-900 dark:text-white">
                 Kaito Hub
