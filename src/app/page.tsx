@@ -427,7 +427,7 @@ export default function Home() {
             </div>
 
             {/* Social Links - Right Side */}
-            <div className="flex flex-wrap justify-center sm:justify-end gap-3">
+            <div className="flex flex-wrap justify-center sm:justify-end gap-3 py-2 px-3">
               {/* LinkedIn */}
               <a
                 href="https://linkedin.com/in/nguyensynguyen"
