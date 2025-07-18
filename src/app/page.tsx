@@ -36,12 +36,12 @@ export default function Home() {
       tech: ['Next.js', 'MDX', 'Contentful']
     },
     {
-      name: 'Pomodoro Timer',
-      description: 'Boost your productivity with the Pomodoro Technique',
-      href: 'https://pomodoro.kaitojd.me',
+      name: 'Fomoduct',
+      description: 'Boost your productivity and enhance focus with this Pomodoro timer and some tools',
+      href: 'https://fomoduct.kaitojd.me',
       icon: '🍅',
       category: 'Tools',
-      status: 'Coming Soon',
+      status: 'In Progress',
       tech: ['React', 'PWA', 'Local Storage']
     },
     {
@@ -247,7 +247,7 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <div className="text-3xl font-bold text-indigo-200 group-hover:scale-110 transition-transform duration-300">0</div>
+                  <div className="text-3xl font-bold text-indigo-200 group-hover:scale-110 transition-transform duration-300">1</div>
                 </div>
                 <h3 className="font-semibold text-white mb-1">In Progress</h3>
                 <p className="text-sm text-blue-100/70">Currently working</p>
@@ -264,7 +264,7 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <div className="text-3xl font-bold text-orange-200 group-hover:scale-110 transition-transform duration-300">5</div>
+                  <div className="text-3xl font-bold text-orange-200 group-hover:scale-110 transition-transform duration-300">4</div>
                 </div>
                 <h3 className="font-semibold text-white mb-1">Coming Soon</h3>
                 <p className="text-sm text-blue-100/70">In the pipeline</p>
